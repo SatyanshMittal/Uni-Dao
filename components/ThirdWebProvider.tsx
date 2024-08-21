@@ -9,4 +9,4 @@ export const ThirdwebClientProvider = ({
   children: React.ReactNode;
 }) => {
   return <ThirdwebProvider value>{children}</ThirdwebProvider>;
-};
+};  

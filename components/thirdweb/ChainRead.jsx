@@ -36,7 +36,7 @@ export default function Proposals() {
         proposals.map((proposal, index) => (
           <div key={index}>
             <h2>Proposal {index + 1}</h2>
-            <p><strong>Proposal ID:</strong> {proposal.proposalId}</p>
+            <p><strong>Proposal ID:</strong> {proposal.poposalId}</p>
             <p><strong>Proposer:</strong> {proposal.proposer}</p>
             <p><strong>Description:</strong> {proposal.description}</p>
             <p><strong>Start Block:</strong> {proposal.startBlock}</p>

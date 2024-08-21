@@ -20,9 +20,11 @@ import Wallet from "../thirdweb/Wallet"
 import Purpose from '@/components/thirdweb/propose'
 import Read from "@/components/thirdweb/ChainRead"
 import PurposeLimit from "@/components/thirdweb/proposalThreshold"
+import { purposeDao } from "../component/purpose-dao";
+// import VotingComponent from "@/components/thirdweb/castVote"
 
-// Corrected Profile component
-const Profile = () => {
+// Corrected Purposals component
+const Purposals = () => {
 
   return (
     <div className="flex justify-center items-center w-full bg-black">
@@ -35,6 +37,7 @@ const Profile = () => {
 
         <Purpose/>
         <PurposeLimit/>
+        {/* <VotingComponent/> */}
 
         <Read/>
         
@@ -73,12 +76,12 @@ export default function SidebarDemo() {
 
   const links = [
     {
-      label: "Profile",
+      label: "Purposals",
       href: "#",
       icon: (
         <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
-      component: "Profile",
+      component: "Purposals",
     },
     {
       label: "Add Course",
@@ -104,21 +107,15 @@ export default function SidebarDemo() {
       ),
       component: "StudentStats",
     },
-    {
-      label: "Logout",
-      href: "#",
-      icon: (
-        <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-      ),
-    },
+  
   ];
 
   const [open, setOpen] = useState(false);
 
   const renderComponent = () => {
     switch (currentTab) {
-      case "Profile":
-        return <Profile />;
+      case "Purposals":
+        return <Purposals />;
       case "Addcourse":
         return <Addcourse />;
       case "Addworkshop":
@@ -149,23 +146,7 @@ export default function SidebarDemo() {
               ))}
             </div>
           </div>
-          <div>
-            <SidebarLink
-              link={{
-                label: "Manu Arora",
-                href: "#",
-                icon: (
-                  <Image
-                    src="https://assets.aceternity.com/manu.png"
-                    className="h-7 w-7 flex-shrink-0 rounded-full"
-                    width={100}
-                    height={50}
-                    alt="Avatar"
-                  />
-                ),
-              }}
-            />
-          </div>
+          
         </SidebarBody>
       </Sidebar>
       {renderComponent()}
