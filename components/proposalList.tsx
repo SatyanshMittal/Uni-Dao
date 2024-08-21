@@ -6,9 +6,8 @@ import Wallet from '@/components/thirdweb/Wallet'
 
 // import Purpose from '@/components/thirdweb/propose'
 import GetPurpose from "@/components/thirdweb/getProposal"
-import { PurposeDao } from '@/components/component/purpose-dao'
 
-export default function Page() {
+export default function PurposeList() {
   const [wallets, setWallets] = useState(null);
 
   useEffect(() => {
@@ -29,7 +28,6 @@ export default function Page() {
     <div>
       <GetPurpose wallets={wallets} />
       <Wallet/>
-      <PurposeDao/>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function BackgroundBoxesDemo() {
 
       <Boxes />
 
-<div className="w-[70%]  flex gap-3 justify-center">
+<div className="w-[70%] z-30  flex gap-3 justify-center">
 <VrLms/>
 
 <WebLms/>

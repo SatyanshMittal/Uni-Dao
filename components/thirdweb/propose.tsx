@@ -25,16 +25,16 @@ export default function ProposalComponent() {
   };
 
   return (
-    <div>
-      <h2>Create a Proposal</h2>
+    <div className="flex flex-col gap-3 ">
+      <h2 className="mx-auto text-white/70">Create a Proposal</h2>
       
       <input
         type="text"
         placeholder="Enter description"
         onChange={(e) => setDescription(e.target.value)}
-        className="text-black"
+        className="text-gray-600 px-4 py-2 border border-white/30 bg-transparent w-[80%] focus:border-none "
       />
-      <button onClick={handleSubmit} disabled={isLoading} className="bg-red-500">
+      <button onClick={handleSubmit} disabled={isLoading} className="bg-white/20 rounded-md">
         {isLoading ? "Submitting..." : "Submit Proposal"}
       </button>
       {error && <p>Error: {error.message}</p>}

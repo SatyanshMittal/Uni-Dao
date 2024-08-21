@@ -16,11 +16,11 @@ function Communityt() {
                     </div>
                 </div>
                 <div className="bg-green-50 w-[50%] h-full">
-                <img
+                {/* <img
                   src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM21xaDJmbmNraXpobmZ3aHY2aTRuZGJqdGF0c3cwNGh5dzQydXowNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26uf7OXQ5E3rWm5Uc/giphy.webp"
                   alt="Funny GIF"
                   className='w-[80%] h-full'
-                />
+                /> */}
                 </div>
             
       </div>

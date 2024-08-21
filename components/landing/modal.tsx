@@ -2,7 +2,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { getWalletInfo } from "thirdweb/wallets";
-import { useRouter } from "next/navigation";
+import { Button } from "../ui/button";
+import Link from "next/link";
+// import { useRouter } from "next/navigation";
 import {
   Modal,
   ModalBody,
@@ -14,7 +16,7 @@ import Wallet from "../thirdweb/Wallet";
 
 export function AnimatedModalDemo() {
   const [wallets, setWallets] = useState(null);
-  const router = useRouter(); // Initialize the useRouter hook
+  // const router = useRouter(); // Initialize the useRouter hook
 
   useEffect(() => {
     const fetchWalletInfo = async () => {
@@ -25,11 +27,13 @@ export function AnimatedModalDemo() {
     fetchWalletInfo();
   }, []);
 
-  useEffect(() => {
-    if (wallets) {
-      router.push("/dashboard"); // Redirect to /dashboard when wallets is not null
-    }
-  }, [wallets, router]);
+  // useEffect(() => {
+  //   if (wallets != null) {
+  //     router.push("/cuims");
+  //      // Redirect to /dashboard when wallets is not null
+  //      console.log(wallets)
+  //   }
+  // }, [wallets, router]);
 
   const images = [
     "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -50,10 +54,15 @@ export function AnimatedModalDemo() {
             ✈️
           </div>
         </ModalTrigger>
-        <ModalBody>
-          <ModalContent>
+        <ModalBody className="w-full flex item-center items-center bg-red-400">
+          <ModalContent className="space-y-5 mt-20">
             <p className="text-3xl font-semibold">Connect Your Wallet</p>
             <Wallet />
+            <div className="w-full flex justify-center gap-4" >
+               <Button><Link href={"./cuims"}>Uims</Link></Button> 
+               <Button><Link href={"./lms/vrLms"}>Lms</Link></Button> 
+            </div>
+
           </ModalContent>
         </ModalBody>
       </Modal>

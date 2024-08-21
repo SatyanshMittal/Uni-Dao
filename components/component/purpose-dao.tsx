@@ -32,9 +32,9 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 
-export function purposeDao() {
+export function PurposeDao() {
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col  w-full pt-10">
       <main className="flex-1 bg-background">
         <section className="py-12 md:py-16 lg:py-20">
           <div className="container px-4 md:px-6">
@@ -49,16 +49,7 @@ export function purposeDao() {
                   <Label htmlFor="description">Proposal Description</Label>
                   <Textarea id="description" placeholder="Enter proposal description" rows={4} />
                 </div>
-                <div>
-                  <Label htmlFor="category">Proposal Category</Label>
-                  <Select id="category">
-                    <option value="">Select a category</option>
-                    <option value="governance">Governance</option>
-                    <option value="finance">Finance</option>
-                    <option value="operations">Operations</option>
-                    <option value="community">Community</option>
-                  </Select>
-                </div>
+                
                 <Button type="submit">Submit Proposal</Button>
               </form>
             </div>

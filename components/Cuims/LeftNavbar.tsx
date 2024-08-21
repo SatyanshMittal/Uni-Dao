@@ -3,6 +3,8 @@
 import { ConnectWallet, useAddress, useContract } from "@thirdweb-dev/react";
 import React, { useState, useEffect } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
+// import { PurposeDao } from "../component/purpose-dao";
+import PurposeList from "../proposalList";
 import {
   IconArrowLeft,
   IconBrandTabler,
@@ -20,29 +22,30 @@ import Wallet from "../thirdweb/Wallet"
 import Purpose from '@/components/thirdweb/propose'
 import Read from "@/components/thirdweb/ChainRead"
 import PurposeLimit from "@/components/thirdweb/proposalThreshold"
-import { purposeDao } from "../component/purpose-dao";
+// import { purposeDao } from "../component/purpose-dao";
 // import VotingComponent from "@/components/thirdweb/castVote"
 
 // Corrected Purposals component
 const Purposals = () => {
 
   return (
-    <div className="flex justify-center items-center w-full bg-black">
-      <div className="text-white">
+    <div className="flex justify-center overflow-y-scroll items-center flex-col w-full bg-black">
+      
         <div className="w-[200px]">
           <Wallet/>
-          THis 
 
         </div>
 
         <Purpose/>
-        <PurposeLimit/>
-        {/* <VotingComponent/> */}
+        
 
         <Read/>
+
+        {/* <PurposeList/> */}
         
+
         
-      </div>
+
     </div>
   );
 };
@@ -131,12 +134,12 @@ export default function SidebarDemo() {
     <div
       className={cn(
         "flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
-        "h-screen w-full" 
+        "h-screen  w-full" 
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
         <SidebarBody className="justify-between gap-10">
-          <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+          <div className="flex flex-col flex-1  overflow-x-hidden">
             {open ? <Logo /> : <LogoIcon />}
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
